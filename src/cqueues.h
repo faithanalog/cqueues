@@ -74,8 +74,10 @@
 
 #define UCLIBC_PREREQ(M, m, p) (defined __UCLIBC__ && (__UCLIBC_MAJOR__ > M || (__UCLIBC_MAJOR__ == M && __UCLIBC_MINOR__ > m) || (__UCLIBC_MAJOR__ == M && __UCLIBC_MINOR__ == m && __UCLIBC_SUBLEVEL__ >= p)))
 
+#ifndef __sun__
 #ifndef ENABLE_EPOLL
 #define ENABLE_EPOLL HAVE_EPOLL_CREATE
+#endif
 #endif
 
 #ifndef ENABLE_PORTS
